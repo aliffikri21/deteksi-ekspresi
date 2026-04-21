@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Real-time emoji display based on camera pose and facial expression detection,
-with added LAUGH and ANGRY expressions.
-"""
-
 import cv2
 import mediapipe as mp
 import numpy as np
