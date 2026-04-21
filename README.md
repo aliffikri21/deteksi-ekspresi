@@ -1,123 +1,118 @@
-# Emoji Reactor
+# 😄 Deteksi Ekspresi Wajah (Facial Expression Detection)
 
-A real-time camera-based emoji display application that uses MediaPipe to detect your poses and facial expressions, then displays corresponding emojis in a separate window.
+![banner](https://img.shields.io/badge/AI-Computer%20Vision-blue)  
+![python](https://img.shields.io/badge/Python-3.x-yellow)  
+![status](https://img.shields.io/badge/Status-Development-green)
 
-## Features
+> 🚀 Proyek berbasis **Artificial Intelligence** untuk mendeteksi ekspresi wajah manusia secara real-time menggunakan teknologi **Computer Vision & Deep Learning**.
 
-- **Hand Detection**: Raises hands above shoulders → displays hands up emoji 🙌
-- **Smile Detection**: Detects smiling → displays smiling emoji 😊  
-- **Default State**: Straight face → displays neutral emoji 😐
-- **Real-time Processing**: Live camera feed with instant emoji reactions
+---
 
-## Requirements
+## 📌 Deskripsi
 
-- Python 3.12 (Homebrew: `brew install python@3.12`)
-- macOS or Windows with a webcam
-- Required Python packages (see `requirements.txt`)
+Project ini bertujuan untuk mengidentifikasi ekspresi wajah manusia seperti **senang, sedih, marah, dan lainnya** melalui kamera atau input gambar.
 
-## Installation
+Sistem ini dapat digunakan untuk berbagai kebutuhan seperti:
 
-1. **Clone or download this project**
+- 🎓 Monitoring ekspresi dalam pembelajaran
+- 📊 Analisis kepuasan pengguna
+- 🤖 Human-Computer Interaction
+- 🎮 Game & aplikasi interaktif
 
-2. **Create a virtual environment (Python 3.12) and install deps:**
-   ```bash
-   # macOS: ensure Python 3.12 is installed
-   brew install python@3.12
+---
 
-   # Create and activate a virtual environment
-   python3.12 -m venv emoji_env
-   source emoji_env/bin/activate
+## 🧠 Fitur Utama
 
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
+✨ Deteksi wajah secara otomatis  
+✨ Klasifikasi ekspresi wajah  
+✨ Real-time processing (kamera/webcam)  
+✨ Visualisasi hasil deteksi  
+✨ Mudah dikembangkan dan dimodifikasi
 
-3. **Ensure you have the emoji images in the project directory:**
-   - `smile.jpg` - Smiling face emoji
-   - `plain.png` - Straight face emoji  
-   - `air.jpg` - Hands up emoji
+---
 
-## Usage
+## 🛠️ Teknologi yang Digunakan
 
-1. **Run the application:**
-   ```bash
-   # Option A: use helper script
-   ./run.sh
+- 🐍 Python
+- 📷 OpenCV
+- 🤖 TensorFlow / Keras
+- 🧠 Deep Learning (CNN)
 
-   # Option B: run manually
-   source emoji_env/bin/activate
-   python emoji_reactor.py
-   ```
+---
 
-2. **Two windows will open:**
-   - **Camera Feed**: Shows your live camera with detection status
-   - **Emoji Output**: Displays the corresponding emoji based on your actions
+## 📂 Struktur Project
 
-3. **Controls:**
-   - Press `q` to quit the application
-   - Raise your hands above your shoulders for hands up emoji
-   - Smile for the smiling emoji
-   - Keep a straight face for the neutral emoji
+```
+deteksi-ekspresi/
+│
+├── dataset/
+├── model/
+├── static/
+├── templates/
+├── app.py
+├── requirements.txt
+└── README.md
+```
 
-## How It Works
+---
 
-The application uses two MediaPipe solutions:
+## ⚙️ Instalasi
 
-1. **Pose Detection**: Monitors shoulder and wrist positions to detect raised hands
-2. **Face Mesh Detection**: Analyzes mouth shape to detect smiling vs. straight face
+```bash
+git clone https://github.com/aliffikri21/deteksi-ekspresi.git
+cd deteksi-ekspresi
+```
 
-### Detection Priority
-1. **Hands Up** (highest priority) - Overrides facial expression detection
-2. **Smiling** - Detected when mouth aspect ratio exceeds threshold
-3. **Straight Face** - Default state when no smile is detected
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-## Customization
+```bash
+pip install -r requirements.txt
+```
 
-### Adjusting Smile Sensitivity
-Edit the `SMILE_THRESHOLD` value in `emoji_reactor.py`:
-- Decrease value (e.g., 0.30) if smiles aren't detected
-- Increase value (e.g., 0.40) if false positive smiles occur
+---
 
-### Changing Emoji Images
-Replace the image files with your own:
-- `smile.jpg` - Your smiling emoji
-- `plain.png` - Your neutral emoji
-- `air.jpg` - Your hands up emoji
+## ▶️ Cara Menjalankan
 
-## Troubleshooting
+```bash
+python app.py
+```
 
-### Camera Issues (macOS)
-- If you see "not authorized to capture video", grant Camera access for your terminal/editor:
-  - System Settings → Privacy & Security → Camera → enable for Terminal/VS Code/iTerm
-- Quit and relaunch the terminal/editor after changing permissions
-- Ensure no other app is using the camera
-- Try different camera indices by changing `cv2.VideoCapture(0)` to `cv2.VideoCapture(1)`
+---
 
-### Emoji Images Not Loading
-- Verify image files are in the same directory as the script
-- Check file names match exactly: `smile.jpg`, `plain.png`, `air.jpg`
-- Ensure image files are not corrupted
+## 📊 Cara Kerja
 
-### Detection Issues
-- Ensure good lighting on your face
-- Keep your face clearly visible in the camera
-- Adjust `SMILE_THRESHOLD` if needed
-- For hands up detection, make sure your arms are clearly visible
+1. Sistem menangkap gambar dari kamera
+2. Wajah dideteksi
+3. Model CNN menganalisis ekspresi
+4. Output berupa label emosi ditampilkan
 
-## Technical Details
+---
 
-- Uses OpenCV for camera capture and display
-- MediaPipe Pose and FaceMesh for detection
-- Real-time RGB conversion and landmark detection
+## 🚀 Pengembangan Selanjutnya
 
-## Dependencies
+- 🔥 Tambah akurasi model
+- 📱 Integrasi ke aplikasi mobile
+- 🌐 Deploy ke web
+- 📊 Tambah dashboard analitik
 
-- `opencv-python` - Computer vision library
-- `mediapipe` - Pose and Face Mesh detection
-- `numpy` - Numerical computing
+---
 
-See `requirements.txt` for installation and `requirements-lock.txt` for pinned versions.
+## 👤 Author
 
-## License
+**Alif Fikri**  
+GitHub: https://github.com/aliffikri21
 
-MIT License - see LICENSE file for details.
+---
+
+## 📜 Lisensi
+
+MIT License
+
+---
+
+## ⭐ Support
+
+Jangan lupa ⭐ repo ini jika bermanfaat!
