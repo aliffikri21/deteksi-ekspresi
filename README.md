@@ -40,7 +40,7 @@ Sistem ini dapat digunakan untuk berbagai kebutuhan seperti:
 
 ---
 
-## 📂 Struktur Project
+<!-- ## 📂 Struktur Project
 
 ```
 deteksi-ekspresi/
@@ -54,7 +54,7 @@ deteksi-ekspresi/
 └── README.md
 ```
 
----
+--- -->
 
 ## ⚙️ Instalasi
 
